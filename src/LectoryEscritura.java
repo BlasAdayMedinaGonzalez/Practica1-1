@@ -1,7 +1,9 @@
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 
 
@@ -102,8 +104,38 @@ class LectoryEscritura {
     }
 
     public String pasaraFichero() {
+        File file = new File(getUrlEscritura());
+        PrintWriter pWriter = null;
+        try {
+            // Se prueba si el fichero existe, si no se crea
 
+            if (!file.exists()) {
+                file.createNewFile();
+            } else if (file.exists()) {
+                file.delete();
+            }
+
+            pWriter = new PrintWriter(new FileWriter(file));
+            for (int i = 0; i < LIMITE_PERSONAS; i++) {
+                pWriter.println(Nombre.get(contadorRandomNombre[i]) + " nota 1: " + nota[0] + " nota 2: " + nota[1]
+                        + " nota 3: " + nota[2] + " nota 4: " + nota[3] + " Media: "
+                        + Math.round((notaTotalArray[i] / 4) * 100.0) / 100.0);
+            }
+
+
+
+        } catch (Exception e) {
+            e.toString();
+        } finally {
+            try {
+                if (pWriter != null)
+                    pWriter.close();
+            } catch (Exception e2) {
+                e2.toString();
+            }
+        }
         return "";
+
     }
 
 }

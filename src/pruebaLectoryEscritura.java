@@ -12,7 +12,11 @@ public class pruebaLectoryEscritura {
             System.out.println("No se ha podido leer los datos del archivo csv " +  le.getUrl() + " Error: " + comprobar);
         }
 
+        le.setUrlEscritura("C:\\Users\\adaym\\OneDrive\\Escritorio\\programacionMovil\\pruebaInicial" + File.separator + "ficheroCreado.txt");
 
-
+        comprobar = le.pasaraFichero();
+        if (!comprobar.equals("")) {
+            System.out.println("No se ha podido escribir los datos en el nuevo fichero " + le.getUrlEscritura() + " Error: " + comprobar);
+        }
     }
 }
