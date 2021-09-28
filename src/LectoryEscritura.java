@@ -1,5 +1,7 @@
-
+import java.io.BufferedReader;
+import java.io.File;
 import java.util.ArrayList;
+
 
 
 class LectoryEscritura {
@@ -43,11 +45,19 @@ class LectoryEscritura {
     }
 
     public String leer() {
+        File file = null;
+        BufferedReader bfR = null;
+        file = new File(getUrl());
+
+        if (!file.exists()) {
+            return "El fichero de entrada no existe";
+        }
+
         return "";
     }
 
     public String pasaraFichero() {
-        return "";
+       return "";
     }
 
 }
