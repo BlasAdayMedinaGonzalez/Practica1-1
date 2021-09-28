@@ -113,8 +113,10 @@ class LectoryEscritura {
                 file.createNewFile();
             } else if (file.exists()) {
                 file.delete();
+                file.createNewFile();
             }
 
+            // Imprime cada línea porqur cada array contiene los datos
             pWriter = new PrintWriter(new FileWriter(file));
             for (int i = 0; i < LIMITE_PERSONAS; i++) {
                 pWriter.println(Nombre.get(contadorRandomNombre[i]) + " nota 1: " + nota[0] + " nota 2: " + nota[1]

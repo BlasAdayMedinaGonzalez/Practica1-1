@@ -9,7 +9,7 @@ public class pruebaLectoryEscritura {
 
         comprobar = le.leer();
         if (!comprobar.equals("")) {
-            System.out.println("No se ha podido leer los datos del archivo csv " +  le.getUrl() + " Error: " + comprobar);
+            System.out.println("No se ha podido leer los datos del archivo txt " +  le.getUrl() + " Error: " + comprobar);
         }
 
         le.setUrlEscritura("C:\\Users\\adaym\\OneDrive\\Escritorio\\programacionMovil\\pruebaInicial" + File.separator + "ficheroCreado.txt");
