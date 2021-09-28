@@ -21,6 +21,7 @@ class LectoryEscritura {
     static double[] notaTotalArray = new double[LIMITE_PERSONAS];
     static int[] contadorRandomNombre = new int[LIMITE_PERSONAS];
     static Double[] Media = new Double[LIMITE_PERSONAS];
+    static String guardarNombreyNotas[] = new String[10];
 
 
     public String getUrl() {
@@ -65,11 +66,11 @@ class LectoryEscritura {
 
             for (int i = 0; i < LIMITE_PERSONAS; i++) {
 
-                contadorRandomNombre[i] = (int) Math.floor(Math.random() * (0 - (contadorFila + 1)) + (contadorFila));
+                contadorRandomNombre[i] = (int) Math.floor(Math.random() * (1 - (contadorFila + 1)) + (contadorFila));
                 notaTotal = 0;
                 // bucle que guarda cada numero aleatorio y los asuma al total
                 for (int j = 0; j < nota.length; j++) {
-                    nota[j] = Math.round((Math.random() * 11) * 100.0) / 100.0;
+                    nota[j] = Math.round((Math.random() * 10) * 100.0) / 100.0;
                     notaTotal += nota[j];
                 }
                 // Se guarda cada nota total en un array
@@ -77,9 +78,11 @@ class LectoryEscritura {
                 // Se hace la media de cada nota
                 Media[i] = Math.round((notaTotalArray[i] / 4) * 100.0) / 100.0;
 
-                System.out.println(Nombre.get(contadorRandomNombre[i]) + " nota 1: " + nota[0] + " nota 2: " + nota[1]
+                guardarNombreyNotas[i] = Nombre.get(contadorRandomNombre[i]) + " nota 1: " + nota[0] + " nota 2: " + nota[1]
                         + " nota 3: " + nota[2] + " nota 4: " + nota[3] + " Media: "
-                        + Media[i]);
+                        + Media[i];
+
+                System.out.println(guardarNombreyNotas[i]);
 
             }
             return "";
@@ -111,9 +114,7 @@ class LectoryEscritura {
             // Imprime cada línea porqur cada array contiene los datos
             pWriter = new PrintWriter(new FileWriter(file));
             for (int i = 0; i < LIMITE_PERSONAS; i++) {
-                pWriter.println(Nombre.get(contadorRandomNombre[i]) + " nota 1: " + nota[0] + " nota 2: " + nota[1]
-                        + " nota 3: " + nota[2] + " nota 4: " + nota[3] + " Media: "
-                        + Math.round((notaTotalArray[i] / 4) * 100.0) / 100.0);
+                pWriter.println(guardarNombreyNotas[i]);
             }
 
 
