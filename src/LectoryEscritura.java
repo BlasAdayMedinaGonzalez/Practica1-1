@@ -11,7 +11,6 @@ class LectoryEscritura {
 
     private String Url;
     private String urlEscritura;
-    private String fichero;
 
     ArrayList<String> Nombre = new ArrayList<String>();
     static int contadorFila = 0;
@@ -40,13 +39,6 @@ class LectoryEscritura {
         this.urlEscritura = urlEscritura;
     }
 
-    public String getFichero() {
-        return fichero;
-    }
-
-    public void setFichero(String fichero) {
-        this.fichero = fichero;
-    }
 
     public String leer() {
         File file = null;
