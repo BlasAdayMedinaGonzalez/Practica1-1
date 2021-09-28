@@ -18,8 +18,6 @@ class LectoryEscritura {
     static int[] contadorRandomNombre = new int[LIMITE_PERSONAS];
     static Double[] Media = new Double[LIMITE_PERSONAS];
 
-    // #region g y s
-
     public String getUrl() {
         return Url;
     }
@@ -43,8 +41,13 @@ class LectoryEscritura {
     public void setFichero(String fichero) {
         this.fichero = fichero;
     }
-    // #endregion
 
+    public String leer() {
+        return "";
+    }
 
+    public String pasaraFichero() {
+        return "";
+    }
 
 }
